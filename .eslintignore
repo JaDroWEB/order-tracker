@@ -1,0 +1,12 @@
+#ignore files
+dist
+node_modules
+docs
+angular
+.vscode
+hibernate
+mock
+.next
+src/assets
+src/lp
+src/app/typings
