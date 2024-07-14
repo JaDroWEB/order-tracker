@@ -10,7 +10,6 @@ import { TranslateModule } from '@ngx-translate/core';
     standalone: true,
     imports: [RouterOutlet, MatToolbarModule, MatMenuModule, MatButtonModule, TranslateModule],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {

@@ -9,25 +9,29 @@
         {{ data.orderHistory.orderNumber }}
     }
 </h2>
-<mat-dialog-content>
-    <form class="filters" [formGroup]="formGroup">
-        <div class="filter divider">
+<mat-dialog-content class="edit-dialog">
+    <form [formGroup]="formGroup">
+        <div>
             <h5>{{ 'STATUS.LABEL' | translate }}</h5>
             <mat-radio-group formControlName="status">
                 @for (status of orderHistoryStatusValues; track status) {
-                    <mat-radio-button [value]="status">{{ status }}</mat-radio-button>
+                    <mat-radio-button [value]="status">{{
+                        'STATUS.' + status.toUpperCase() | translate
+                    }}</mat-radio-button>
                 }
             </mat-radio-group>
             @if (formGroup.controls.status.invalid && formGroup.controls.status.touched) {
                 <mat-error>{{ 'FIELD_REQ' | translate }}</mat-error>
             }
         </div>
-        <div class="filter divider">
+        <div>
             <mat-form-field>
                 <mat-label>{{ 'PRODUCT_LINE.LABEL' | translate }}</mat-label>
                 <mat-select formControlName="productLine">
                     @for (productLine of orderHistoryProductLineValues; track productLine) {
-                        <mat-option [value]="productLine">{{ productLine }}</mat-option>
+                        <mat-option [value]="productLine">{{
+                            'PRODUCT_LINE.' + productLine.toUpperCase() | translate
+                        }}</mat-option>
                     }
                 </mat-select>
                 @if (formGroup.controls.productLine.invalid && formGroup.controls.productLine.touched) {
@@ -35,7 +39,7 @@
                 }
             </mat-form-field>
         </div>
-        <div class="filter">
+        <div>
             <mat-form-field>
                 <mat-label>{{ 'PRODUCT.LABEL' | translate }}</mat-label>
                 <input formControlName="product" type="text" matInput placeholder="Product" />
@@ -44,7 +48,7 @@
                 }
             </mat-form-field>
         </div>
-        <div class="filter">
+        <div>
             <mat-form-field>
                 <mat-label>{{ 'QUANTITY.LABEL' | translate }}</mat-label>
                 <input formControlName="quantity" type="number" matInput placeholder="Quantity" />
@@ -53,7 +57,7 @@
                 }
             </mat-form-field>
         </div>
-        <div class="filter">
+        <div>
             <mat-form-field>
                 <mat-label>{{ 'DATE_REQ.LABEL' | translate }}</mat-label>
                 <input formControlName="dateRequested" matInput [matDatepicker]="dateFrom" />
@@ -64,7 +68,7 @@
                 }
             </mat-form-field>
         </div>
-        <div class="filter">
+        <div>
             <mat-form-field>
                 <mat-label>{{ 'ON.LABEL' | translate }}</mat-label>
                 <input formControlName="orderNumber" type="number" matInput placeholder="Order number" />

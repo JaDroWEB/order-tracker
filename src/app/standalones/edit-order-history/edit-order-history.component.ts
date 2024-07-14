@@ -32,7 +32,6 @@ interface EditOrderHistoryData {
 @Component({
     selector: 'app-edit-order-history',
     templateUrl: './edit-order-history.component.html',
-    styleUrls: ['./edit-order-history.component.scss'],
     standalone: true,
     imports: [
         MatButtonModule,
