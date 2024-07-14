@@ -1,0 +1,51 @@
+<form class="filters" [formGroup]="formGroup">
+    <div class="filter divider">
+        <h5>{{ 'STATUS.LABEL' | translate }}</h5>
+        <div class="checkboxes" formGroupName="status">
+            @for (status of orderHistoryStatusValues; track status) {
+                <mat-checkbox [formControlName]="status">{{
+                    'STATUS.' + status.toUpperCase() | translate
+                }}</mat-checkbox>
+            }
+        </div>
+    </div>
+    <div class="filter divider">
+        <h5>{{ 'PRODUCT_LINE.LABEL' | translate }}</h5>
+        <mat-form-field>
+            <mat-select formControlName="productLine">
+                <mat-option value="all">{{ 'PRODUCT_LINE.ALL' | translate }}</mat-option>
+                @for (productLine of orderHistoryProductLineValues; track productLine) {
+                    <mat-option [value]="productLine">{{
+                        'PRODUCT_LINE.' + productLine.toUpperCase() | translate
+                    }}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div style="display: flex; gap: 8px">
+        <div class="filter">
+            <h5>{{ 'FROM.LABEL' | translate }}</h5>
+            <mat-form-field>
+                <mat-label>{{ 'CHOOSE_DATE' | translate }}</mat-label>
+                <input formControlName="from" matInput [matDatepicker]="dateFrom" />
+                <mat-datepicker-toggle matIconSuffix [for]="dateFrom"></mat-datepicker-toggle>
+                <mat-datepicker #dateFrom></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="filter">
+            <h5>{{ 'TO.LABEL' | translate }}</h5>
+            <mat-form-field>
+                <mat-label>{{ 'CHOOSE_DATE' | translate }}</mat-label>
+                <input formControlName="to" matInput [matDatepicker]="dateTo" />
+                <mat-datepicker-toggle matIconSuffix [for]="dateTo"></mat-datepicker-toggle>
+                <mat-datepicker #dateTo></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="filter search">
+        <mat-form-field>
+            <input formControlName="orderNumber" type="number" matInput [placeholder]="'SEARCH_ON' | translate" />
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+</form>

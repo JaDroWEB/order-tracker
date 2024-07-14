@@ -1,0 +1,65 @@
+@if (orderHistory$ | async; as orderHistory) {
+    @if (orderHistory && orderHistory.length) {
+        <div class="table-responsive">
+            <table mat-table [dataSource]="orderHistory" style="background: none">
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef>{{ 'STATUS.LABEL' | translate }}</th>
+                    <td mat-cell *matCellDef="let item">
+                        <div class="status">
+                            <div [class]="item.status"></div>
+                            {{ 'STATUS.' + item.status.toUpperCase() | translate }}
+                        </div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="orderNumber">
+                    <th mat-header-cell *matHeaderCellDef>{{ 'ON.LABEL' | translate }}</th>
+                    <td mat-cell *matCellDef="let item">{{ item.orderNumber }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="productLine">
+                    <th mat-header-cell *matHeaderCellDef>{{ 'PRODUCT_LINE.LABEL' | translate }}</th>
+                    <td mat-cell *matCellDef="let item">
+                        {{ 'PRODUCT_LINE.' + item.productLine.toUpperCase() | translate }}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="product">
+                    <th mat-header-cell *matHeaderCellDef>{{ 'PRODUCT.LABEL' | translate }}</th>
+                    <td mat-cell *matCellDef="let item">{{ item.product }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="quantity">
+                    <th mat-header-cell *matHeaderCellDef>{{ 'QUANTITY.LABEL' | translate }}</th>
+                    <td mat-cell *matCellDef="let item">{{ item.quantity }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="dateRequested">
+                    <th mat-header-cell *matHeaderCellDef>{{ 'DATE_REQ.LABEL' | translate }}</th>
+                    <td mat-cell *matCellDef="let item">{{ item.dateRequested | date: 'dd.MM.YYYY' }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef>{{ 'ACTIONS.LABEL' | translate }}</th>
+                    <td mat-cell *matCellDef="let item">
+                        <button (click)="editItem(item)" mat-icon-button>
+                            <mat-icon>edit_pencil</mat-icon>
+                        </button>
+                        <button (click)="deleteItem(item)" mat-icon-button>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+            </table>
+        </div>
+    } @else {
+        <div class="no-info">
+            <mat-icon>info</mat-icon>
+            <h1>{{ 'NO_HISTORY.TITLE' | translate }}</h1>
+            <small>{{ 'NO_HISTORY.SUBTITLE' | translate }}</small>
+        </div>
+    }
+}
