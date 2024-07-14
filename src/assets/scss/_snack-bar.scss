@@ -1,0 +1,16 @@
+.mdc-snackbar {
+    --mdc-snackbar-container-color: #e2e8f0;
+    --mat-snack-bar-button-color: white;
+
+    &.red-snackbar {
+        --mdc-snackbar-supporting-text-color: #f44336;
+    }
+
+    &.green-snackbar {
+        --mdc-snackbar-supporting-text-color: #4caf50;
+    }
+
+    button {
+        background-color: var(--mdc-snackbar-supporting-text-color);
+    }
+}
