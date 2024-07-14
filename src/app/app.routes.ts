@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
-import { OrderHistoryComponent } from './pages/order-history/order-history.component';
 
 export const routes: Routes = [
     {
         path: 'order-history',
-        component: OrderHistoryComponent
-        // loadChildren: () => import('./pages/categories/categories.module').then((m) => m.CategoriesModule)
+        loadComponent: () =>
+            import('./pages/order-history/order-history.component').then((m) => m.OrderHistoryComponent)
     },
     {
         path: '404',
