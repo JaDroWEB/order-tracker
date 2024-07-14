@@ -1,1 +1,18 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h2>{{ 'APP_TITLE' | translate }}</h2>
+        <button mat-flat-button extended [matMenuTriggerFor]="lang">
+            <img width="20px" [src]="'assets/img/' + currentLang() + '.svg'" [alt]="currentLangUpper()" />
+            {{ currentLangUpper() }}
+        </button>
+        <mat-menu #lang="matMenu">
+            @for (lang of langs(); track lang) {
+                <button (click)="setLanguage(lang)" mat-menu-item>
+                    <img width="20px" [src]="'assets/img/' + lang + '.svg'" [alt]="lang" />
+                    {{ lang.toUpperCase() }}
+                </button>
+            }
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
 <router-outlet></router-outlet>
