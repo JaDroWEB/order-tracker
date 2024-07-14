@@ -5,8 +5,10 @@
     <div class="left-section">
         <div class="inner-content">
             <h1 class="heading">404</h1>
-            <p class="subheading">Looks like the page you were looking for is no longer here.</p>
-            <button [routerLink]="['/']" routerLinkActive="router-link-active">Go Home</button>
+            <p class="subheading">{{ 'PAGE_NOT_FOUND' | translate }}</p>
+            <button [routerLink]="['/']" routerLinkActive="router-link-active">
+                {{ 'BACK.LABEL' | translate }}
+            </button>
         </div>
     </div>
     <div class="right-section">

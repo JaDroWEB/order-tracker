@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
-/*Variables*/
+
 .left-section .inner-content {
     position: absolute;
     top: 50%;
@@ -10,16 +10,6 @@
 * {
     box-sizing: border-box;
 }
-
-// html, body {
-//   margin: 0;
-//   padding: 0;
-// }
-
-// body {
-//   font-family: "Fira Sans", sans-serif;
-//   color: #f5f6fa;
-// }
 
 .background {
     position: absolute;
@@ -46,8 +36,8 @@
     position: relative;
     margin: 0 auto;
     width: 85%;
-    height: 100vh;
-    padding-bottom: 25vh;
+    height: calc(100svh - 85px);
+    padding-bottom: 22vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
