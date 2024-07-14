@@ -1,0 +1,87 @@
+{
+    "APP_TITLE": "Aplikácia na Sledovanie Objednávok",
+    "ORDER": {
+        "HISTORY": "História objednávok",
+        "LABEL": "Objednávku",
+        "DELETE": {
+            "TITLE": "Vymazanie Objednávky {{ orderNumber }}",
+            "SUCCESS": "Objednávka úspešne vymazaná",
+            "FAIL": "Vymazanie objednávky zlyhalo"
+        },
+        "LOAD": {
+            "FAIL": "Načítavanie Histórie Objednávok Zlyhalo"
+        },
+        "ADD": {
+            "SUCCESS": "Objednávka úspešne pridaná",
+            "FAIL": "Pridanie objednávky zlyhalo"
+        },
+        "EDIT": {
+            "SUCCESS": "Objednávka úspešne upravená",
+            "FAIL": "Upravenie objednávky zlyhalo"
+        }
+    },
+    "STATUS": {
+        "LABEL": "Stav",
+        "IN_PROGRESS": "V procese",
+        "PENDING": "Čakajúca",
+        "COMPLETED": "Hotová"
+    },
+    "PRODUCT_LINE": {
+        "LABEL": "Produktová rada",
+        "CEMENT": "Cement",
+        "AGGREGATES": "Agregáty",
+        "READY_MIX": "Hotová zmes",
+        "ALL": "Všetky produktové rady"
+    },
+    "FROM": {
+        "LABEL": "Od"
+    },
+    "TO": {
+        "LABEL": "Do"
+    },
+    "CHOOSE_DATE": "Vyberte dátum",
+    "SEARCH_ON": "Hľadať podľa Výrobného Čísla",
+    "ADD_NEW_ORDER": "Vložiť Novú Objednávku",
+    "LOADING_HISTORY": "Načítava sa História Objednávok",
+    "LOADING_FAILED": "Načítavanie Histórie Objednávok Zlyhalo",
+    "ON": {
+        "LABEL": "Číslo Objednávky"
+    },
+    "PRODUCT": {
+        "LABEL": "Produkt"
+    },
+    "QUANTITY": {
+        "LABEL": "Množstvo"
+    },
+    "DATE_REQ": {
+        "LABEL": "Dátum Podania"
+    },
+    "ACTIONS": {
+        "LABEL": "Akcie"
+    },
+    "NO_HISTORY": "Žiadne záznamy v histórii objednávok",
+    "FIELD_REQ": "Pole je povinné",
+    "ADD": {
+        "LABEL": "Vložiť"
+    },
+    "EDIT": {
+        "LABEL": "Upraviť"
+    },
+    "NEW": {
+        "LABEL": "Nová"
+    },
+    "CANCEL": {
+        "LABEL": "Zrušiť"
+    },
+    "PAGE_NOT_FOUND": "Vyzerá to, že stránka ktorú hľadáte tu už viac nie je",
+    "BACK": {
+        "LABEL": "Naspäť"
+    },
+    "DELETE": {
+        "LABEL": "Vymazať",
+        "QUESTION": "Ste si istý, že chcete vymazať objednávku?"
+    },
+    "GENERAL": {
+        "ERR": "Niečo sa pokazilo"
+    }
+}

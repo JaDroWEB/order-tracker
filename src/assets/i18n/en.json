@@ -1,0 +1,87 @@
+{
+    "APP_TITLE": "Order Tracking App",
+    "ORDER": {
+        "HISTORY": "Order History",
+        "LABEL": "Order",
+        "DELETE": {
+            "TITLE": "Delete Order {{ orderNumber }}",
+            "SUCCESS": "Order deleted successfully",
+            "FAIL": "Delete order history failed"
+        },
+        "LOAD": {
+            "FAIL": "Load order history list failed"
+        },
+        "ADD": {
+            "SUCCESS": "Order added successfully",
+            "FAIL": "Add order history item failed"
+        },
+        "EDIT": {
+            "SUCCESS": "Order updated successfully",
+            "FAIL": "Edit order history failed"
+        }
+    },
+    "STATUS": {
+        "LABEL": "Status",
+        "IN_PROGRESS": "In Progress",
+        "PENDING": "Pending",
+        "COMPLETED": "Completed"
+    },
+    "PRODUCT_LINE": {
+        "LABEL": "Product Line",
+        "CEMENT": "Cement",
+        "AGGREGATES": "Aggregates",
+        "READY_MIX": "Ready-Mix",
+        "ALL": "All Product Lines"
+    },
+    "FROM": {
+        "LABEL": "From"
+    },
+    "TO": {
+        "LABEL": "To"
+    },
+    "CHOOSE_DATE": "Choose a date",
+    "SEARCH_ON": "Search for Order Number",
+    "ADD_NEW_ORDER": "Add New Order",
+    "LOADING_HISTORY": "Loading Order History",
+    "LOADING_FAILED": "Failed to load order history",
+    "ON": {
+        "LABEL": "Order Number"
+    },
+    "PRODUCT": {
+        "LABEL": "Product"
+    },
+    "QUANTITY": {
+        "LABEL": "Quantity"
+    },
+    "DATE_REQ": {
+        "LABEL": "Date Requested"
+    },
+    "ACTIONS": {
+        "LABEL": "Actions"
+    },
+    "NO_HISTORY": "Order history",
+    "FIELD_REQ": "Field is required",
+    "ADD": {
+        "LABEL": "Add"
+    },
+    "EDIT": {
+        "LABEL": "Edit"
+    },
+    "NEW": {
+        "LABEL": "New"
+    },
+    "CANCEL": {
+        "LABEL": "Cancel"
+    },
+    "PAGE_NOT_FOUND": "Looks like the page you were looking for is no longer here",
+    "BACK": {
+        "LABEL": "Back"
+    },
+    "DELETE": {
+        "LABEL": "Delete",
+        "QUESTION": "Are you sure you want to delete this order?"
+    },
+    "GENERAL": {
+        "ERR": "Something went wrong"
+    }
+}
