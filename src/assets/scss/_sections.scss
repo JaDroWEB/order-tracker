@@ -1,0 +1,28 @@
+section {
+    &.order-history {
+        display: block;
+        padding: 16px;
+
+        h4,
+        h5 {
+            font-weight: 700;
+        }
+
+        .add-btn {
+            margin-top: 20px;
+            margin-bottom: -15px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .order-history-data {
+            margin-top: 20px;
+
+            mat-card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}

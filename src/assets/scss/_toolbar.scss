@@ -1,0 +1,13 @@
+mat-toolbar.header-toolbar {
+    mat-toolbar-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button.mdc-button {
+            img {
+                margin-bottom: -2px;
+            }
+        }
+    }
+}

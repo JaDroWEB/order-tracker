@@ -1,0 +1,120 @@
+form.filters {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .filter {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        &.search {
+            margin-top: auto;
+            margin-bottom: auto;
+            max-width: 300px;
+
+            mat-form-field {
+                border: 1px solid gray;
+                border-radius: 4px;
+                padding-left: 8px;
+            }
+        }
+
+        h4,
+        h5 {
+            font-weight: 700;
+        }
+
+        h5 {
+            padding: 0;
+            margin: 0;
+        }
+
+        .checkboxes {
+            display: flex;
+            gap: 4px;
+
+            .mdc-label {
+                padding: 0;
+            }
+        }
+
+        .mat-mdc-form-field-type-mat-select {
+            max-width: 150px;
+        }
+    }
+
+    @media screen and (min-width: 950px) {
+        .filter {
+            width: auto;
+            &.divider {
+                border-right: 2px solid lightgrey;
+                padding-right: 20px;
+                margin-right: 20px;
+            }
+
+            .checkboxes {
+                gap: 12px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1250px) {
+        .filter {
+            &:last-child {
+                margin-left: auto;
+            }
+        }
+    }
+
+    mat-form-field {
+        --mat-form-field-focus-state-layer-opacity: 0;
+        --mat-form-field-filled-with-label-container-padding-top: 8px;
+        --mat-form-field-container-vertical-padding: 10px;
+        --mat-form-field-container-height: auto;
+
+        .mat-mdc-form-field-subscript-wrapper {
+            display: none;
+        }
+
+        .mat-mdc-form-field-infix {
+            width: auto;
+        }
+
+        &.mat-mdc-form-field-type-mat-select {
+          .mat-mdc-form-field-infix {
+              min-width: 150px;
+          }
+        }
+
+        .mdc-text-field {
+            padding: 0;
+            background: none;
+        }
+
+        .mdc-line-ripple::before {
+            border: none;
+        }
+
+        .mat-mdc-select-trigger {
+            gap: 8px;
+        }
+
+        .mat-datepicker-input {
+            width: 100px;
+        }
+
+        .mat-mdc-text-field-wrapper {
+            .mat-mdc-icon-button.mat-mdc-button-base {
+                padding: 8px;
+                --mdc-icon-button-state-layer-size: 44px;
+            }
+
+            .mat-mdc-form-field-flex .mat-mdc-floating-label {
+                top: 50%;
+            }
+        }
+    }
+}

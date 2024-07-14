@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="header-toolbar" color="primary">
     <mat-toolbar-row>
         <h2>{{ 'APP_TITLE' | translate }}</h2>
         <button mat-flat-button extended [matMenuTriggerFor]="lang">
@@ -6,7 +6,7 @@
             {{ currentLangUpper() }}
         </button>
         <mat-menu #lang="matMenu">
-            @for (lang of langs(); track lang) {
+            @for (lang of langs(); track $index) {
                 <button (click)="setLanguage(lang)" mat-menu-item>
                     <img width="20px" [src]="'assets/img/' + lang + '.svg'" [alt]="lang" />
                     {{ lang.toUpperCase() }}

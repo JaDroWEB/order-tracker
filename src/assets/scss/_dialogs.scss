@@ -1,0 +1,20 @@
+.edit-dialog {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        mat-form-field {
+            width: 100%;
+        }
+
+        mat-radio-group ~ mat-error {
+            padding-left: 16px;
+        }
+
+        mat-error {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}
