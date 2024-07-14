@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{ data.titleKey | translate: data.titleParams }}</h2>
+@if (data.contentKey) {
+    <mat-dialog-content>
+        <p>{{ data.contentKey | translate: data.contentParams }}</p>
+    </mat-dialog-content>
+}
+@if (data.buttons?.length) {
+    <mat-dialog-actions align="end">
+        @for (button of data.buttons; track $index) {
+            <button mat-button [mat-dialog-close]="button.result" [color]="button.color">
+                {{ button.labelKey | translate: button.labelParams }}
+            </button>
+        }
+    </mat-dialog-actions>
+}

@@ -1,0 +1,85 @@
+<h2 mat-dialog-title>
+    @if (data.isAdd) {
+        {{ 'ADD.LABEL' | translate }}
+        {{ 'NEW.LABEL' | translate }}
+        {{ 'ORDER.LABEL' | translate }}
+    } @else {
+        {{ 'EDIT.LABEL' | translate }}
+        {{ 'ORDER.LABEL' | translate }}
+        {{ data.orderHistory.orderNumber }}
+    }
+</h2>
+<mat-dialog-content>
+    <form class="filters" [formGroup]="formGroup">
+        <div class="filter divider">
+            <h5>{{ 'STATUS.LABEL' | translate }}</h5>
+            <mat-radio-group formControlName="status">
+                @for (status of orderHistoryStatusValues; track status) {
+                    <mat-radio-button [value]="status">{{ status }}</mat-radio-button>
+                }
+            </mat-radio-group>
+            @if (formGroup.controls.status.invalid && formGroup.controls.status.touched) {
+                <mat-error>{{ 'FIELD_REQ' | translate }}</mat-error>
+            }
+        </div>
+        <div class="filter divider">
+            <mat-form-field>
+                <mat-label>{{ 'PRODUCT_LINE.LABEL' | translate }}</mat-label>
+                <mat-select formControlName="productLine">
+                    @for (productLine of orderHistoryProductLineValues; track productLine) {
+                        <mat-option [value]="productLine">{{ productLine }}</mat-option>
+                    }
+                </mat-select>
+                @if (formGroup.controls.productLine.invalid && formGroup.controls.productLine.touched) {
+                    <mat-error>{{ 'FIELD_REQ' | translate }}</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="filter">
+            <mat-form-field>
+                <mat-label>{{ 'PRODUCT.LABEL' | translate }}</mat-label>
+                <input formControlName="product" type="text" matInput placeholder="Product" />
+                @if (formGroup.controls.product.invalid && formGroup.controls.product.touched) {
+                    <mat-error>{{ 'FIELD_REQ' | translate }}</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="filter">
+            <mat-form-field>
+                <mat-label>{{ 'QUANTITY.LABEL' | translate }}</mat-label>
+                <input formControlName="quantity" type="number" matInput placeholder="Quantity" />
+                @if (formGroup.controls.quantity.invalid && formGroup.controls.quantity.touched) {
+                    <mat-error>{{ 'FIELD_REQ' | translate }}</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="filter">
+            <mat-form-field>
+                <mat-label>{{ 'DATE_REQ.LABEL' | translate }}</mat-label>
+                <input formControlName="dateRequested" matInput [matDatepicker]="dateFrom" />
+                <mat-datepicker-toggle matIconSuffix [for]="dateFrom"></mat-datepicker-toggle>
+                <mat-datepicker #dateFrom></mat-datepicker>
+                @if (formGroup.controls.dateRequested.invalid && formGroup.controls.dateRequested.touched) {
+                    <mat-error>{{ 'FIELD_REQ' | translate }}</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="filter">
+            <mat-form-field>
+                <mat-label>{{ 'ON.LABEL' | translate }}</mat-label>
+                <input formControlName="orderNumber" type="number" matInput placeholder="Order number" />
+                @if (formGroup.controls.orderNumber.invalid && formGroup.controls.orderNumber.touched) {
+                    <mat-error>{{ 'FIELD_REQ' | translate }}</mat-error>
+                }
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button [disabled]="isLoadingState$ | async" mat-button (click)="editOrder()" color="primary">
+        {{ (data.isAdd ? 'ADD' : 'EDIT') + '.LABEL' | translate }}
+    </button>
+    <button mat-button mat-dialog-close>
+        {{ 'CANCEL.LABEL' | translate }}
+    </button>
+</mat-dialog-actions>
