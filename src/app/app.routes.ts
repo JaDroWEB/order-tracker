@@ -3,8 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
     {
         path: 'order-history',
-        loadComponent: () =>
-            import('./pages/order-history/order-history.component').then((m) => m.OrderHistoryComponent)
+        loadChildren: () => import('./pages/order-history/order-history.module').then((m) => m.OrderHistoryModule)
     },
     {
         path: '404',
